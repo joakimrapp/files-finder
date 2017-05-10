@@ -1,7 +1,7 @@
 {
   "name": "@jrapp/files-finder",
   "version": "1.0.0",
-  "description": "Console Readable Log Writer for @jrapp/log-emitter",
+  "description": "Finds files recursively with a wildcarded pattern",
   "main": "./src/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec --colors --timeout 10000 --async-only --recursive ./test/tests",
