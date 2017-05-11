@@ -1,6 +1,6 @@
 {
   "name": "@jrapp/files-finder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Finds files recursively with a wildcarded pattern",
   "main": "./src/index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@jrapp/log-emitter": "*",
+    "@jrapp/callbacks-to-promises": "*",
     "stack-trace": "0.0.9"
   }
 }

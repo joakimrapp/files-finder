@@ -1,10 +1,5 @@
 const path = require( 'path' );
-const fs = ( ( fs ) => ( {
-	readdir: ( ...args ) => new Promise( ( resolve, reject ) =>
-		fs.readdir( ...args, ( err, result ) => err ? reject( err ) : resolve( result ) ) ),
-	stat: ( ...args ) => new Promise( ( resolve, reject ) =>
-		fs.stat( ...args, ( err, result ) => err ? reject( err ) : resolve( result ) ) )
-} ) )( require( 'fs' ) );
+const { fs } = require( '@jrapp/callbacks-to-promises' );
 const log = require( '@jrapp/log-emitter' ).log( 'files-find' );
 const recursive = ( absolutepath, regexp ) => fs.stat( absolutepath )
 	.then( stats => stats.isDirectory() )
