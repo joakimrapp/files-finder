@@ -16,5 +16,5 @@ const find = ( absolutepath, rule ) => log
 	.timer( recursive( absolutepath, new RegExp( `^${rule.replace( /\*/g, '.*' )}$` ) ) )
 	.debug( 'scan finished', ( filepaths ) => `found ${filepaths.length} files matching ${rule}` )
 	.promise;
-module.exports = ( scanpath, rule = '*' ) => find( path.isAbsolute( scanpath ) ? scanpath :
-	path.resolve( path.dirname( require( 'stack-trace' ).get()[ 1 ].getFileName() ), scanpath ), rule );
+module.exports = ( scanpath, rule = '*', steps = 1 ) => find( path.isAbsolute( scanpath ) ? scanpath :
+	path.resolve( path.dirname( require( 'stack-trace' ).get()[ steps ].getFileName() ), scanpath ), rule );
